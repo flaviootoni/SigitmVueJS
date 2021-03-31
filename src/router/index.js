@@ -16,6 +16,7 @@ import Inventarios from '@/components/admin/Inventarios'
 import CatalogoDeFacilidades from '@/components/admin/CatalogoDeFacilidades'
 import Preferencias from '@/components/admin/Preferencias'
 import Relatorios from '@/components/admin/Relatorios'
+import TA from '@/components/ta/TA'
 
 Vue.use(VueRouter)
 
@@ -39,6 +40,8 @@ const routes = [
   {path: '/admin/catalogoDeFacilidades', name: 'catalogoDeFacilidades', component: CatalogoDeFacilidades},
   {path: '/admin/preferencias', name: 'preferencias', component: Preferencias},
   {path: '/admin/relatorios', name: 'relatorios', component: Relatorios},
+
+  {path: '/ta', name: 'TA', component: TA},
 ]
 
 export default new VueRouter({

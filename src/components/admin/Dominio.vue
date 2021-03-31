@@ -36,7 +36,6 @@ import Usuarios from './dominio/Usuarios'
 export default {
     nome: 'Dominio',
     components: {Grupos, Subgrupos, Usuarios},
-    
     data: () => ({
         tab:null,
         items: [
