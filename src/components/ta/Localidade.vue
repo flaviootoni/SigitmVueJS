@@ -139,7 +139,6 @@ export default {
     components: {},
     
     data: () => ({
-        panel: [0, 1],
         readonly: false,
     })
 }
