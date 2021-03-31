@@ -4,9 +4,18 @@
            
             <div>
                 <v-row dense class="mt-0" >
-                    <v-btn color="success"> <v-icon left small> fa-save </v-icon> Salvar </v-btn>
-                    <v-btn color="warning"> <v-icon left small> fa-edit </v-icon> Modificar </v-btn>
-                    <v-btn color="error"> <v-icon left small> fa-trash </v-icon> Deletar </v-btn>
+                    <v-chip dense class="ma-2" color="success">
+                        <v-icon left>fa-plus</v-icon>
+                        Salvar
+                    </v-chip>
+                    <v-chip dense class="ma-2" color="warning">
+                        <v-icon left>fa-edit</v-icon>
+                        Modificar
+                    </v-chip>
+                    <v-chip dense class="ma-2" color="error">
+                        <v-icon left>fa-trash</v-icon>
+                        Modificar
+                    </v-chip>
                 </v-row>
                 <v-divider class="mt-5"></v-divider>
             </div>
