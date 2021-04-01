@@ -5,15 +5,15 @@
             <div>
                 <v-row dense class="mt-0" >
                     <v-chip dense class="ma-2" color="success">
-                        <v-icon left>fa-plus</v-icon>
+                        <v-icon small left>fa-plus</v-icon>
                         Salvar
                     </v-chip>
                     <v-chip dense class="ma-2" color="warning">
-                        <v-icon left>fa-edit</v-icon>
+                        <v-icon small left>fa-edit</v-icon>
                         Modificar
                     </v-chip>
                     <v-chip dense class="ma-2" color="error">
-                        <v-icon left>fa-trash</v-icon>
+                        <v-icon small left>fa-trash</v-icon>
                         Modificar
                     </v-chip>
                 </v-row>
@@ -47,6 +47,8 @@
 
 <script>
 
+import axios from 'axios/dist/axios'
+
 import Localidade from './Localidade'
 import Definicao from './Definicao'
 
@@ -71,7 +73,25 @@ export default {
             {tab: 'Vida.', content: 'Usuarios'},
             {tab: 'Sobres.', content: 'Usuarios'},
         ]
-    })
+    }),
+
+    created() {
+
+        axios.get('http://192.168.15.4:9081/s3-server/ta/tipoTa', {
+            headers: {
+                "content-type": "application/json",
+                'Accept': 'application/json', 
+                'x-access-token': '56fea101-6ecb-43a1-a987-f8ce584d6a8e',
+            },
+            params: {
+                
+            },
+        }).then((res) => {
+            console.log(res.data)
+        }).catch((error) => {
+            console.error(error)
+        })
+    }
 
 }
 </script>
