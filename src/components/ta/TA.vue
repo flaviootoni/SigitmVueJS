@@ -22,7 +22,7 @@
             <v-row dense class="mt-3">                
                 <v-col cols="2"><v-switch dense label="Interconectadas" color="success" value="success" hide-details/></v-col>
                 <v-col><v-select dense :items="items" label="Tipo de bilhete:" /></v-col>
-                <v-col><v-select dense :items="items" label="Tipo TA" ></v-select></v-col>
+                <v-col><v-select dense :items="tiposTA" label="Tipo TA" item-text="nome"></v-select></v-col>
                 <v-col><v-select dense :items="items" label="Tipo Rede" ></v-select></v-col>
             </v-row>
             
@@ -57,6 +57,7 @@ export default {
     components: {Localidade, Definicao},
     data: () => ({
         tab:null,
+        tiposTA: [],
         items: [
             {tab: 'Local', content: 'Localidade'},
             {tab: 'Defin.', content: 'Definicao'},
@@ -76,18 +77,15 @@ export default {
     }),
 
     created() {
-
-        axios.get('http://192.168.15.4:9081/s3-server/ta/tipoTa', {
+        axios.get('http://localhost:9081/s3-server/ta/tipoTa', {
             headers: {
-                "content-type": "application/json",
-                'Accept': 'application/json', 
-                'x-access-token': '56fea101-6ecb-43a1-a987-f8ce584d6a8e',
+                'x-auth-token': '56fea101-6ecb-43a1-a987-f8ce584d6a8e'
             },
             params: {
                 
             },
         }).then((res) => {
-            console.log(res.data)
+            this.tiposTA = res.data
         }).catch((error) => {
             console.error(error)
         })
